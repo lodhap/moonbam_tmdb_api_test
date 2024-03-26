@@ -24,5 +24,11 @@ public class MovieResponseDto {
 			return results;
 		}
 
+		@Override
+		public String toString() {
+			return "MovieResponseDto [page=" + page + ", total_pages=" + total_pages + ", total_results="
+					+ total_results + ", results=" + results + "]";
+		}
+
 
 }

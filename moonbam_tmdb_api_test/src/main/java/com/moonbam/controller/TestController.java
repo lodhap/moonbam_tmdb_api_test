@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.moonbam.dto.MovieResponseDto;
 import com.moonbam.service.TestService;
 
 @RestController
@@ -15,8 +16,10 @@ public class TestController {
 	@Autowired
     private TestService service;
 
-    @GetMapping("/posts")
-    public String listPosts() {
-        return service.getPosts();
+    @GetMapping("/test")
+    @ResponseBody
+    public MovieResponseDto test() {
+    	MovieResponseDto movieResponse = service.movieLatestView();
+        return movieResponse;
     }
 }
