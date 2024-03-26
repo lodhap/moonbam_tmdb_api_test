@@ -1,18 +1,28 @@
 package com.moonbam.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.moonbam.dto.MovieResponseDto;
+
 @Service
 public class TestService {
+	
+	@Value("${tmdb.key}")
+	private String key;
+	@Autowired
     private RestTemplate restTemplate;
-    private String apiUrl = "https://jsonplaceholder.typicode.com/posts";
+    private String apiUrl;
 
-    public TestService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+//    public TestService(RestTemplate restTemplate) {
+//        this.restTemplate = restTemplate;
+//    }
 
-    public String getPosts() {
-        return restTemplate.getForObject(apiUrl, String.class);
+    public ApiResponseDto<MovieResponseDto> movieLatestView() {
+    	String apiurl = "https://api.themoviedb.org/3/movie/popular?api_key="+key+"&language=ko-KR&page=1";
+    	MovieResponseDto movieResponse = restTemplate.getForObject(apiUrl, MovieResponseDto.class);
+        return ResponseUtils.ok(movieResponse);
     }
 }
