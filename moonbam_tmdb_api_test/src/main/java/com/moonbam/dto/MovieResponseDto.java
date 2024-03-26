@@ -20,7 +20,7 @@ public class MovieResponseDto {
 			return total_results;
 		}
 
-		public List<MovieResultResponseDto> getResults() {
+		public List<MovieResultResponseDto> getResults() { 
 			return results;
 		}
 
