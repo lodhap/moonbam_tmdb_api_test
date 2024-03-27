@@ -42,6 +42,9 @@ public class TmdbApiService {
 			if(insertedPage%50==0) {
 				Thread.sleep(1000);
 			}
+			if(insertedPage%10==0) {
+				System.out.println("현재 진행 페이지: "+ insertedPage);
+			}
 			
 		}
 
