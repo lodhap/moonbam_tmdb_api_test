@@ -2,6 +2,9 @@ package com.moonbam.dto;
 
 import java.time.LocalDate;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("MovieResultResponseDto")
 public class MovieResultResponseDto {
 //	컨텐츠 id : contId - id
 //	컨텐츠 제목 : contTitle - title
@@ -26,9 +29,10 @@ public class MovieResultResponseDto {
 	
 	private Long id;
     private String title;
-    //producerID 부재
+    //private String producerID;
     private String overview;
-    private String original_language;
+//	private String original_language;
+    //private String production_countries;
     private LocalDate release_date;
     
     private float vote_average;
@@ -36,71 +40,55 @@ public class MovieResultResponseDto {
     //private String popularity;
     private String poster_path;
     //private int vote_count;
-
+    private double popularity;
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getOverview() {
 		return overview;
 	}
-
 	public void setOverview(String overview) {
 		this.overview = overview;
 	}
-
-	public String getOriginal_language() {
-		return original_language;
-	}
-
-	public void setOriginal_language(String original_language) {
-		this.original_language = original_language;
-	}
-
 	public LocalDate getRelease_date() {
 		return release_date;
 	}
-
 	public void setRelease_date(LocalDate release_date) {
 		this.release_date = release_date;
 	}
-
 	public float getVote_average() {
 		return vote_average;
 	}
-
 	public void setVote_average(float vote_average) {
 		this.vote_average = vote_average;
 	}
-
 	public String getPoster_path() {
 		return poster_path;
 	}
-
 	public void setPoster_path(String poster_path) {
 		this.poster_path = poster_path;
 	}
-
+	public double getPopularity() {
+		return popularity;
+	}
+	public void setPopularity(double popularity) {
+		this.popularity = popularity;
+	}
 	@Override
 	public String toString() {
-		return "MovieResultResponseDto [id=" + id + ", title=" + title + ", overview=" + overview
-				+ ", original_language=" + original_language + ", release_date=" + release_date + ", vote_average="
-				+ vote_average + ", poster_path=" + poster_path + "]";
+		return "MovieResultResponseDto [id=" + id + ", title=" + title + ", overview=" + overview + ", release_date="
+				+ release_date + ", vote_average=" + vote_average + ", poster_path=" + poster_path + ", popularity="
+				+ popularity + "]";
 	}
-  
-    
     
     
 }

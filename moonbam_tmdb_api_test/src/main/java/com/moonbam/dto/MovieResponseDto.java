@@ -2,6 +2,9 @@ package com.moonbam.dto;
 
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("MovieResponseDto")
 public class MovieResponseDto {
         private int page;
         private int total_pages;

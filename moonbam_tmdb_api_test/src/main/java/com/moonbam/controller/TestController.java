@@ -19,7 +19,7 @@ public class TestController {
     @GetMapping("/test")
     @ResponseBody
     public MovieResponseDto test() {
-    	MovieResponseDto movieResponse = service.movieLatestView();
+    	MovieResponseDto movieResponse = service.apiTest();
         return movieResponse;
     }
 }

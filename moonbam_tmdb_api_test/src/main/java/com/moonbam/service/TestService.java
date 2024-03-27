@@ -21,8 +21,9 @@ public class TestService {
 //    }
 
 //  public ApiResponseDto<MovieResponseDto> movieLatestView() {
-    public MovieResponseDto movieLatestView() {
-    	String apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key="+key+"&language=ko-KR&page=1";
+    public MovieResponseDto apiTest() {
+//    	String apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key="+key+"&language=ko-KR&page=1";
+    	String apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key="+ key +"&include_adult=false&include_video=false&language=ko-KR&sort_by=popularity.des&page=1";
     	MovieResponseDto movieResponse = restTemplate.getForObject(apiUrl, MovieResponseDto.class);
     	System.out.println(movieResponse);
     	System.out.println("0번째값 테스트: "+ movieResponse.getResults().get(0));
